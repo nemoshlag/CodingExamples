@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CalCalc - your personal health calculator</title>
+<!-- meta tags start -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="" />
+<meta name="Description" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<!-- meta tags end -->
+
+<!-- favorite icon starts -->
+<link rel="shortcut icon" href="images/common/favicon.ico" type="image/x-icon" />
+<!-- favorite icon ends -->
+
+<!-- Google fonts start -->
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
+<!-- Google fonts end -->
+
+<!-- CSS files start -->
+<link href="css/framework.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/colorbox.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/elements.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/responsive.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/hidpi.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/skin.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/custom.css" rel="stylesheet" type="text/css" media="all" />
+<!-- CSS files end -->
+
+<!-- JavaScript files start -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/effects.jquery-ui.min.js"></script>
+<script type="text/javascript" src="js/jquery.nivo-slider.min.js"></script>
+<script type="text/javascript" src="js/jquery.colorbox.min.js"></script>
+<script type="text/javascript" src="js/contact.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<!-- JavaScript files end -->
+</head>
+<body>
+<!-- website wrapper starts -->
+<div class="websiteWrapper"> 
+  
+  <!-- main menu wrapper starts -->
+  <ul class="mainMenuWrapper">
+      <li><a href="index.html">Home</a></li>
+    <li class="currentPage"><a href="signIn.html">Sign in</a></li>
+    <li><a href="about.html">About</a> </li>
+    <li><a href="contact.html">Contact US</a></li>
+    <li><a href="tip.html">Today's healthy TIP</a> </li>
+    <li><a href="faq.html">FAQ Page</a></li>
+  </ul>
+  <!-- main menu wrapper ends --> 
+  
+  <!-- header wrapper starts -->
+  <div class="headerOuterWrapper">
+    <div class="headerWrapper"> <a href="" class="mainMenuButton"><span>Menu</span></a></div>
+  </div>
+  <!-- header wrapper ends -->
+  
+  <!-- page wrapper starts -->
+  <div class="pageWrapper contactPageWrapper"> 
+    
+    <!-- contact form wrapper starts -->
+    <div class="contactFormWrapper">
+      <h4 class="contactTitle">Sign In</h4>
+      <!-- form success message wrapper starts -->
+<!--      <div class="formSuccessMessageWrapper" id="formSuccessMessageWrapper">
+        <h4>Your message was received!</h4>
+        <p>Your message was successfully submitted to us, and we will contact you as soon as possible.</p>
+      </div>-->
+      <!-- form success message wrapper ends --> 
+      <!-- contact form starts -->
+      <form action="php/contact.php" method="post" class="contactForm" id="contactForm">
+        <fieldset>
+          <div class="formFieldWrapper">
+            <label for="contactNameField">Email or username</label>
+            <input type="text" name="contactNameField" value="" class="contactField requiredField" id="contactNameField" data-placeholder=""/>
+          </div>
+          <div class="formFieldWrapper">
+            <label for="contactEmailField">Password</label>
+            <input type="text" name="contactEmailField" value="" class="contactField requiredField requiredEmailField" id="contactEmailField" data-placeholder=""/>
+          </div>
+
+          <div class="formSubmitButtonErrorsWrapper"> 
+            <!-- form errors start --> 
+            <span class="formValidationError" id="contactNameFieldError">Please enter email or username.</span> <span class="formValidationError" id="contactEmailFieldError">Please enter password</span> <span class="formValidationError" id="contactEmailFieldError2">Invalid username or password</span>
+            <!-- form errors end -->
+            <div class="portfolioOneItemButtonsWrapper"><a href="signUp.html" class="portfolioOneExpandButton">Sign Up</a><input type="submit" class="buttonWrapper contactSubmitButton" id="contactSubmitButton" value="Sign In" data-form-id="contactForm"/></div>
+          </div>
+          <input type="hidden" name="formIsReady" value="true"  id="formIsReady" />
+          
+
+        </fieldset>
+          
+      </form>
+      <!-- contact form ends --> 
+      
+    </div>
+    <!-- contact form wrapper ends --> 
+    
+  </div>
+  <!-- page wrapper ends --> 
+  
+  <!-- footer wrapper starts -->
+  <div class="footerWrapper"> 
+    <!-- footer logo starts --> 
+    <a href="index.html" class="footerLogo"><img src="images/common/footerLogo.png" class="" alt=""/></a> 
+    <!-- footer logo ends --> 
+    <!-- footer social icons wrapper starts -->
+    <div class="footerSocialIconsWrapper"> <a href="signIn.html" class="footerSocialIcon footerFacebookIcon"></a></div>
+    <!-- footer social icons wrapper ends --> 
+  </div>
+  <!-- footer wrapper ends -->
+  
+</div>
+<!-- website wrapper ends -->
+</body>
+</html>

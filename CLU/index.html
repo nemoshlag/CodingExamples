@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CLUE - Less Is More </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width user-scalable=no" > 
+        <!-- JS -->
+       
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>-->
+        <script src="jqueryui.js"></script>
+        <script src="modernizr.js"></script>
+        <script type="text/javascript" src="hammer.js"></script>
+
+
+        <!-- CSS -->
+        <link rel="stylesheet" type="text/css" href="jquery-ui-1.10.4.min.css" />
+<!--        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />-->
+        <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.0/jquery.mobile-1.4.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="design.css" />
+        <link rel="stylesheet" type="text/css" href="my.css" />
+    </head>
+    <body>  
+<!--        <div class="mainLoader"></div>-->
+        <div class="loader"></div>
+        <!-- Main Page -->
+        <div id="mainPage" data-role="page" data-position="fixed" class="ui-responsive-panel">
+            <div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="menuPanel">
+
+                <ul data-role="listview"  class="nav-search" id="mPanel">
+                    <li id="mpClose" data-icon="delete" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="" data-rel="close" >Close</a>
+                    </li>
+                    <li data-icon="myapp-home" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#mainPage">Home</a>
+                    </li>
+                    <li data-icon="myapp-light" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a id="randomPageMain" onclick="randomPage();">Random Clue</a>
+                    </li>
+                    <li data-icon="myapp-about" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#aboutPage">About</a>
+                    </li>
+                    <li data-icon="myapp-tutorial" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#tutorialPage">Tutorial</a>
+                    </li>
+                </ul>
+            </div><!-- /panel -->
+            <header data-role="header" id="mainPageHeader" >
+                <a href="#menuPanel" id="menuPanelButton" ></a>
+                <a id="mainLight" onclick="randomPage();"></a>
+                <!--<div style="display: inline-flex">-->
+                <p>Clue</p>
+                <!--<img src="onlyLight.png">-->
+                <!--</div>-->
+
+            </header>
+
+            <div data-role="content" id="mainContent">
+                <p id="mainText"> Let's <br><span>Get a clue</span></p>
+                 <div data-role="fieldcontain" id="mainContentForm">
+                <input type="text" id="mainSearch" value="" placeholder="About..." class="ui-input-text" onclick="getCLU(document.getElementById('mainSearch').value)"/>
+               
+                </div>  
+            </div>
+        </div>
+
+        <!-- Result Page -->
+        <div id="resultPage" data-role="page" data-position="fixed" class="ui-responsive-panel">
+            <div data-role="panel" data-position="left" data-position-fixed="true" data-display="overlay" id="resultPanel">
+                <ul data-role="listview"  class="nav-search" id="rPanel">
+                     <li id="rpClose" data-icon="delete" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="" data-rel="close" >Close</a>
+                    </li>
+                    <li data-icon="myapp-home" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#mainPage">Home</a>
+                    </li>
+                    <li  data-icon="myapp-light" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a id="randomPageResult" onclick="randomPage();">Random Clu</a>
+                    </li>
+                    <li data-icon="myapp-about" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#aboutPage">About</a>
+                    </li>
+                    <li data-icon="myapp-tutorial" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#tutorialPage">Tutorial</a>
+                    </li>
+                </ul>
+
+                <!-- panel content goes here -->
+            </div><!-- /panel -->
+            <header data-role="header" id="resultPageHeader" data-theme="d">
+                <a href="#resultPanel" id="resultPanelButton" data-iconpos="notext"></a>
+                <p id="resultTitle" onClick="$.mobile.changePage('#mainPage');">Clue</p>
+                <a id="resultLight" onclick="randomPage();"></a>
+                <input  data-clear-btn="true" type="text" id="resultSearch"  lang="en" name="name" onkeydown="if (event.keyCode === 13)
+                    getCLU(document.getElementById('resultSearch').value)" value="" placeholder="Search"  />  
+            </header>
+           <!-- <div data-role="content" id="resultContent"> -->
+                <div id="resultImages">
+                <div id="lineup">
+                </div>
+            </div>
+                <div id="resultContentForm">    
+                </div>
+            <!--</div>-->
+        </div>
+
+        <!-- About --> 
+        <div id="aboutPage" data-role="page" data-position="fixed" class="ui-responsive-panel">
+            <div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="aboutPanel">
+                <ul data-role="listview"  class="nav-search" id="aPanel">
+                    <li id="apClose" data-icon="delete" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="" data-rel="close" >Close</a>
+                    </li>
+                    <li data-icon="myapp-home" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#mainPage">Home</a>
+                    </li>
+                    <li data-icon="myapp-light" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a id="randomPageAbout" onclick="randomPage();">Random Clu</a>
+                    </li>
+                    <li data-icon="myapp-about" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#aboutPage">About</a>
+                    </li>
+                    <li data-icon="myapp-tutorial" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#tutorialPage">Tutorial</a>
+                    </li>
+                </ul>
+
+            </div> 
+        <header data-role="header" id="aboutPageHeader" data-theme="d">
+                <a href="#aboutPanel" id="aboutPanelButton" data-iconpos="notext"></a>
+                <p id="aboutTitle" onClick="$.mobile.changePage('#mainPage');">About</p>
+                <a id="aboutLight" onclick="randomPage();"></a>              
+            </header>
+            <div data-role="content" id="aboutContent">
+                <div id="aboutContentForm">
+                    <p id="aboutText"> Get a CLUE.<br><span>Don't be stupid.</span></p>
+                    <p id="aboutFullText">Clu is a simple, quick and enjoyable way to learn new things.<br>
+
+clue is "Made for humans"- adjusted to the human eye and based on associative learning principles.<br>
+Instead of dispensing with an enormous text amounts, or hundreds of search results, clue gives you an esthetic and simple demonstration about the term you were counting for.</p>
+                    <a id="readMoreButton" onclick="readMore();">Read More></a>
+            </div>
+                <div id="Logos"></div>
+            </div>
+        </div>
+        <!-- tutorial Page -->
+        <div id="tutorialPage" data-role="page" data-position="fixed" class="ui-responsive-panel">
+            <div data-role="panel" data-position="left" data-position-fixed="false" data-display="overlay" id="tutorialPanel">
+                <ul data-role="listview"  class="nav-search" id="tPanel">
+                    <li id="tuClose" data-icon="delete" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="" data-rel="close" >Close</a>
+                    </li>
+                    <li data-icon="myapp-home" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#mainPage">Home</a>
+                    </li>
+                    <li data-icon="myapp-light" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a id="tutorialPageAbout" onclick="randomPage();">Random Clu</a>
+                    </li>
+                    <li data-icon="myapp-about" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#aboutPage">About</a>
+                    </li>
+                    <li data-icon="myapp-tutorial" data-filtertext="wai-aria voiceover accessibility screen reader">
+                        <a href="#tutorialPage">Tutorial</a>
+                    </li>
+                </ul>
+
+            </div> 
+        <header data-role="header" id="tutorialPageHeader" data-theme="d">
+                <a href="#tutorialPanel" id="tutorialPanelButton" data-iconpos="notext"></a>
+                <p id="tutorialTitle" onClick="$.mobile.changePage('#mainPage');">Tutorial</p>
+                <a id="tutorialLight" onclick="randomPage();"></a>              
+            </header>
+            <div data-role="content" id="tutorialContent">
+                <p id="tutorialStepTitle"></p>
+                  <div id="tutorialContentImage">
+        </div>
+        </div>
+        </div>
+        <script src="carousel.js"></script>
+        <script type="text/javascript" src="code.js"></script> 
+    </body>
+</html>
